@@ -55,11 +55,10 @@ RUN useradd rails --create-home --shell /bin/bash && \
 
 RUN chown -cR rails:rails /rails/config
 RUN usermod -aG root rails
+RUN mkdir /tempdir
+
     
 USER rails:rails
-
-RUN mkdir /tmp/tempdir
-
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]

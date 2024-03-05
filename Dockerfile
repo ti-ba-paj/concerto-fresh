@@ -53,7 +53,7 @@ COPY --from=build /rails /rails
 RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 
-RUN chown -cR :rails /rails/config
+RUN chown -cR rails:rails /rails/config
 RUN usermod -aG root rails
     
 USER rails:rails

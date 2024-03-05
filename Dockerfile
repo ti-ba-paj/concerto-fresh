@@ -11,8 +11,7 @@ WORKDIR /rails
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development"
-
+    BUNDLE_WITHOUT="development"    
 
 # Throw-away build stage to reduce size of final image
 FROM base as build
@@ -57,6 +56,9 @@ RUN chown -cR rails:rails /rails/config
 RUN usermod -aG root rails
 RUN mkdir /tempdir
 RUN chown -cR rails:rails /tempdir
+
+ENV TEMPDIR="/tempdir"
+
     
 USER rails:rails
 

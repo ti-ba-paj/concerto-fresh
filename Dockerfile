@@ -57,7 +57,7 @@ RUN usermod -aG root rails
 RUN mkdir /rails/tempdir
 RUN chown -cR rails:rails /rails/tempdir
 
-ENV TEMPDIR="/rails/tempdir"
+ENV TMPDIR="/rails/tempdir"
 
     
 USER rails:rails

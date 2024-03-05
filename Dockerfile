@@ -54,10 +54,10 @@ RUN useradd rails --create-home --shell /bin/bash && \
 
 RUN chown -cR rails:rails /rails/config
 RUN usermod -aG root rails
-RUN mkdir /tempdir
-RUN chown -cR rails:rails /tempdir
+RUN mkdir /rails/tempdir
+RUN chown -cR rails:rails /rails/tempdir
 
-ENV TEMPDIR="/tempdir"
+ENV TEMPDIR="/rails/tempdir"
 
     
 USER rails:rails

@@ -58,6 +58,8 @@ RUN usermod -aG root rails
     
 USER rails:rails
 
+RUN mkdir tempdir
+
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]

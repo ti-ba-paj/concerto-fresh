@@ -58,7 +58,7 @@ RUN usermod -aG root rails
     
 USER rails:rails
 
-RUN mkdir tempdir
+RUN mkdir /tmp/tempdir
 
 
 # Entrypoint prepares the database.
